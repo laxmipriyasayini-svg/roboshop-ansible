@@ -9,8 +9,8 @@
     - mongodb
     - catalogue
   tasks:
-  - name: create ec2 instance
-    amazon.aws.ec2.instance:
+  -  name: create ec2 instance
+     amazon.aws.ec2.instance:
       instance_type: "t3.micro"
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
@@ -20,8 +20,8 @@
         Component: "{{ item }}"
         Environment: "{{ env }}"
         Name: "{{ item }}-{{ env }}"
-    loop: "{{ instances }}"
-    register: ec2_output
+     loop: "{{ instances }}"
+     register: ec2_output
 
   
   - name: print the output 
