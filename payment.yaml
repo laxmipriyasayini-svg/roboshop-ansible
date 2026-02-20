@@ -2,14 +2,14 @@
   hosts: all
   become: yes
   tasks:
-  - name: install pythin
+  - name: install python
     ansible.builtin.dnf:
       name: "{{ item }}"
       state: present
     loop:
     - python3 
     - gcc 
-    - python3-deve1
+    - python3-devel
 
   - name: create system user roboshop
     ansible.builtin.user:
