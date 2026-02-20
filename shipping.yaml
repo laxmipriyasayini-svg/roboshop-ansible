@@ -81,6 +81,6 @@
 
   - name: start and enable shipping
     ansible.builtin.service:
-    name: shipping
-    start: restarted
-    enabled: yes
+      name: shipping
+      start: restarted
+      enabled: yes
