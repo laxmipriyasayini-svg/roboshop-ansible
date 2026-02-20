@@ -68,8 +68,11 @@
 
   - name: install dependencies
     ansible.builtin.pip:
-      requirements: PyMySQL
+      name: "{{ item }}"
       executable: pip3.9
+    loop:
+    - cryptography
+    - PyMySQL
     
 
   - name: import shipping data
